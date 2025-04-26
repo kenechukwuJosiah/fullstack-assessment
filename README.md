@@ -81,6 +81,10 @@ Returns the virtual lab page.
 
 To seed the database with some data, run the following command in the root directory of the project:
 
+```bash
+npm run seed
+```
+
 ## GitHub Actions
 
 To use GitHub Actions to automate the build and deployment process:
