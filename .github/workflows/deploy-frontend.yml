@@ -1,0 +1,38 @@
+name: Deploy Vue.js Frontend via SSH
+
+on:
+  push:
+    paths:
+      - "frontend/**"
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install dependencies and build Vue.js app
+        working-directory: ./frontend
+        run: |
+          npm ci
+          npm run build
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy Vue.js Frontend via SSH
+        run: |
+          scp -o StrictHostKeyChecking=no -r ./frontend/dist ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/path/to/frontend
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
+            # Optional: Restart your web server or frontend service
+            # Example: systemctl restart nginx
+          '
