@@ -7,8 +7,8 @@
         <div class="h-64 bg-[#222435] rounded">
           <Line :data="chartData" :options="chartOptions" />
         </div>
-        <div class="grid grid-cols-3 gap-4">
-          <div class="h-72 bg-[#222435] rounded">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="h-72 bg-[#222435] rounded sm:col-span-1">
             <h3 class="text-sm text-gray-300 mb-2">Product Sales</h3>
             <Bar :data="barChartData" :options="chartOptions" />
           </div>
