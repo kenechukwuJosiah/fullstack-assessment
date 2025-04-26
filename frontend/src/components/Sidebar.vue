@@ -45,6 +45,15 @@
             Animation
           </router-link>
         </li>
+        <li>
+          <router-link
+            to="/virtual-lab"
+            class="block hover:bg-green-600 p-2 rounded"
+            @click="handleLinkClick"
+          >
+            IFrame Virutal Lab
+          </router-link>
+        </li>
       </ul>
     </aside>
 
