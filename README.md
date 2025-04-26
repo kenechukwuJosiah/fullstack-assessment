@@ -30,6 +30,12 @@ The backend API can be ran in two ways:
 
 ### Backend
 
+### Frontend
+
+1. Run `npm install` in the frontend directory
+2. Run `npm run dev` to start the development server
+
+
 #### GET /dummy/data
 
 Returns a JSON object with a message and an array of numbers.
@@ -77,3 +83,24 @@ Returns the virtual lab page.
 ## Seeding
 
 To seed the database with some data, run the following command in the root directory of the project:
+
+## GitHub Actions
+
+To use GitHub Actions to automate the build and deployment process:
+
+
+The project uses two workflows in the `.github/workflows` directory:
+
+1. `deploy-backend.yml`: Deploys the backend API using Docker and Docker Compose.
+2. `deploy-frontend.yml`: Deploys the frontend using a SSH connection.
+
+To add the SSH key as a secret variable, follow these steps:
+
+1. Log in to your GitHub account.
+2. Go to your repository.
+3. Click on the "Actions" tab.
+4. Click on the "Secrets" button.
+5. Click on the "New secret" button.
+6. Enter the name of the secret variable, e.g. "SSH_PRIVATE_KEY".
+7. Enter the value of the secret variable, i.e. the content of the private key file.
+8. Click on the "Add secret" button.
