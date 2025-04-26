@@ -51,7 +51,7 @@
         <!-- Navbar -->
 
         <!-- Dashboard Area -->
-        <main class="p-4 flex-1">
+        <main class="flex-1">
           <router-view />
         </main>
       </div>
