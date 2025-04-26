@@ -3,6 +3,7 @@
 This is a fullstack assessment project that includes a backend API using Node.js and Express, and a frontend using Vue.js.
 
 ## Setup
+
 ### Prisma
 
 1. Run `npx prisma migrate dev` to create the database
@@ -28,13 +29,10 @@ The backend API can be ran in two ways:
 
 ## Endpoints
 
-### Backend
-
 ### Frontend
 
 1. Run `npm install` in the frontend directory
 2. Run `npm run dev` to start the development server
-
 
 #### GET /dummy/data
 
@@ -55,7 +53,6 @@ Returns a JSON object with the user's login count and last login date.
 #### POST /user/webhook/receive
 
 Receives a webhook request and logs it to the console.
-
 
 ### Frontend
 
@@ -87,7 +84,6 @@ To seed the database with some data, run the following command in the root direc
 ## GitHub Actions
 
 To use GitHub Actions to automate the build and deployment process:
-
 
 The project uses two workflows in the `.github/workflows` directory:
 
