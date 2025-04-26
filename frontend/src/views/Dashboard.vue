@@ -1,30 +1,24 @@
 <template>
   <div class="text-gray-400 text-xs">
-    <div class="">
-      <p class="text-sm font-semibold">Dashboard Overview</p>
-      <div class="grid grid-cols-1 gap-6 mt-4">
-        <div class="h-64 bg-[#222435] rounded p-4">
-          <h3 class="text-sm text-gray-300 mb-2">Monthly Course Progress</h3>
+    <div class="p-2">
+      <p>Total Shipments</p>
+      <h2 class="text-lg text-gray-200">Performance</h2>
+      <div class="grid grid-cols-1 gap-4">
+        <div class="h-64 bg-[#222435] rounded">
           <Line :data="chartData" :options="chartOptions" />
         </div>
-
-        <div class="grid grid-cols-3 gap-6">
-          <div class="h-64 bg-[#222435] rounded p-4">
+        <div class="grid grid-cols-3 gap-4">
+          <div class="h-64 bg-[#222435] rounded">
             <h3 class="text-sm text-gray-300 mb-2">Product Sales</h3>
-            <Bar :data="barChartData" :options="barChartOptions" />
+            <Bar :data="barChartData" :options="chartOptions" />
           </div>
-
-          <div class="h-64 bg-[#222435] rounded p-4">
-            <h3 class="text-sm text-gray-300 mb-2">Category Distribution</h3>
-            <Pie :data="pieChartData" :options="pieChartOptions" />
+          <div class="h-64 bg-[#222435] rounded">
+            <h3 class="text-sm text-gray-300 mb-2">Product Sales</h3>
+            <Pie :data="pieChartData" :options="chartOptions" />
           </div>
-
-          <div class="h-64 bg-[#222435] rounded p-4">
-            <h3 class="text-sm text-gray-300 mb-2">Segment Breakdown</h3>
-            <Doughnut
-              :data="doughnutChartData"
-              :options="doughnutChartOptions"
-            />
+          <div class="h-64 bg-[#222435] rounded">
+            <h3 class="text-sm text-gray-300 mb-2">Product Sales</h3>
+            <Doughnut :data="doughnutChartData" :options="chartOptions" />
           </div>
         </div>
       </div>
